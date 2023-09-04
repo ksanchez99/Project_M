@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <!--Head-->
     <head>
         <meta charset="UTF-8">
@@ -14,9 +15,12 @@
         <!--Navbar-->
         <div class="Navbar">
             <a class="active" href="#Home">Home</a>
+            <!--slideshow-->
+            <a href="#Slideshow">Slideshow</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <!--onclick and ondbclick fucntions for open and close contact form-->
+            <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -49,6 +53,39 @@
                 </p>
             </strong>
         </div>
+        <!--Slide Show section-->
+        <div id="Slideshow">
+            <div id="Slideshow_Background">
+                <div id="Slideshow_Container">
+                    <!--Slide 1/2-->
+                    <div class="mySlides fade">
+                        <img class="Slide_Images" src="images/neo.png" alt="Picture of Neo">
+                        <div class="text">Allow me to assist on your project.</div>
+                    </div>
+                     <!--Slide 2/3-->
+                     <div class="mySlides fade">
+                        <img class="Slide_Images" src="images/HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, JS Logos">
+                        <div class="text">I am a front-end web developer,<br> trained in:<br>HTML, CSS and Javascript</div>
+                    </div>
+                      <!--Slide 3/3-->
+                      <div class="mySlides fade">
+                        <img class="Slide_Images" src="images/matrix hallway.jpg" alt="Matrix hallway">
+                        <div class="text"><a class="white-text contact" onclick="openForm()">Please make contact.</a></div>
+                    </div>
+                    <!--Previous and next buttons-->
+                    <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br> <!-- Adds space between images for slideshow and dots-->
+
+                <!--Slideshow dots (another way for users to navigate the slideshow)-->
+                <div style="text-align: center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </div>
 
         <!--About section-->
         <div class="Row" id="About">
@@ -74,8 +111,7 @@
             <!--Left column-->
             <div class="Column_1">
                 <h1>GitHub</h1>
-                <p>
-                    You can view my coding projects on my GitHub profile here:
+                <p> You can view my coding projects on my GitHub profile here:
                     <br>
                     <p class="center"><a href="https://github.com/the-tech-academy" target="_blank">The Tech Academy Github</a></p>
                 </p>
@@ -88,32 +124,30 @@
 
         <!--Contact section-->
         <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <img src="images/matrix.png" alt="Contact_Image">
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
+            <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+           <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form_container"><!-- Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                    <h1>Contact</h1>
+                    <label for="name"><br>Name</b></label>
+                      <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="name"><br>Phone</b></label>
+                      <input type="text" placeholder="Type your number here" name="phone">
+                    <label for="name"><br>Email</b></label>
+                      <input type="text" placeholder="Type your email here" name="email" required>
+                    <label for="name"><br>Message</b></label>
+                      <input type="text" placeholder="Type your message here" name="message">
+
+                      <button type="submit" class="btn">SUBMIT</button>
+                      <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
-            </div>
+           </div>
         </div>
 
         <!--Footer section-->
         <footer>
             <p>
-                <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p>
-                <br>
-            </p>
+                <p class="center">&copy Prosper Consulting Inc., <a href="https://www.learncodinganywhere.com/" target="_blank">The Tech Academy</a></p><br>
         </footer>
+        <script src="js/portfolio_js.js"></script>
     </body>
 </html>

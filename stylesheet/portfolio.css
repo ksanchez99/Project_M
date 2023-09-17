@@ -52,6 +52,10 @@ p {
     padding-left: 20px; /* Adds padding to the left of the paragraph element */
     padding-right: 20px; /* Adds padding to the right of the paragraph element */
 }
+.Resume {
+    color: #14cc00;
+
+}
 
 /* Paragraph element hover effect */
 p:hover {
@@ -96,7 +100,7 @@ img {
 img:hover {
 	filter: grayscale(5%);  /* Brings back most of the image's color when hovered over */
     transition: transform 1s; /* Transition lasts 1 second */
-	transform: scale(1.1); /* Image is increased slightly when hovered over */
+	transform: scale(0.9); /* Image is increased slightly when hovered over */
 }
 
 /* The @media rule is used in media queries to apply different styles for different media/types of devices */
